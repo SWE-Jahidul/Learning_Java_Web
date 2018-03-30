@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="hospital" class="com.spring.test.springtest.Patient"
+		primary="false" scope="singleton" init-method="onCreate"
+		destroy-method="onDistroy" lazy-init="false">
+		<constructor-arg value="101" name="patient_id"></constructor-arg>
+		<constructor-arg value="Md Jahidul Islam"
+			name="patient_name"></constructor-arg>
+		<property name="patient_national_id" value="1245"></property>
+		<property name="adress" ref="adress"></property>
+	</bean>
+	<bean id="adress" class="com.spring.test.springtest.Adress">
+		<constructor-arg name="streat" value="Nikunjo"></constructor-arg>
+		<constructor-arg name="zip_code" value="1229"></constructor-arg>
+	</bean>
+</beans>
